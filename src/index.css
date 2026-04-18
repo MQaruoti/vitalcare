@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* High Density Theme Colors */
+  --color-high-bg: #f0f2f5;
+  --color-high-sidebar: #1e293b;
+  --color-high-primary: #3b82f6;
+  --color-high-danger: #ef4444;
+  --color-high-warning: #f59e0b;
+  --color-high-success: #10b981;
+  --color-high-text-main: #334155;
+  --color-high-text-light: #64748b;
+  --color-high-card-bg: #ffffff;
+  --color-high-border: #e2e8f0;
+  --color-high-card-header: #f8fafc;
+  --color-high-note-bg: #fff8f1;
+}
+
+@layer base {
+  body {
+    @apply text-high-text-main bg-high-bg antialiased text-[13px];
+  }
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 rounded-full hover:bg-slate-400 transition-colors;
+}
+
+/* Theme Specific Classes */
+.card-high {
+  @apply bg-high-card-bg border border-high-border rounded overflow-hidden flex flex-col;
+}
+
+.card-header-high {
+  @apply px-4 py-3 bg-high-card-header border-b border-high-border font-bold flex justify-between items-center text-[12px] uppercase tracking-tight;
+}
+
+.btn-primary-high {
+  @apply bg-high-primary text-white border-none px-4 py-2 rounded font-bold text-[11px] cursor-pointer hover:opacity-90 transition-all uppercase tracking-widest;
+}
+
+.btn-secondary-high {
+  @apply bg-white text-high-text-main border border-high-border px-4 py-2 rounded font-bold text-[11px] cursor-pointer hover:bg-high-bg transition-all uppercase tracking-widest;
+}
+
+.id-badge {
+  @apply bg-high-bg px-2 py-0.5 rounded font-bold text-[10px] text-high-text-light border border-high-border inline-block;
+}
+
+.risk-tag {
+  @apply text-[9px] px-1.5 py-0.5 rounded bg-high-danger text-white font-bold uppercase tracking-tighter;
+}
+
